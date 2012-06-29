@@ -55,9 +55,9 @@ module OmniAuth
       end
 
       def callback_phase
-        if request.params['error'] || request.params['error_reason']
-          raise CallbackError.new(request.params['error'], request.params['error_description'] || request.params['error_reason'], request.params['error_uri'])
-        end
+       # if request.params['error'] || request.params['error_reason']
+       #   raise CallbackError.new(request.params['error'], request.params['error_description'] || request.params['error_reason'], request.params['error_uri'])
+       # end
 
         self.access_token = build_access_token
         self.access_token = access_token.refresh! if access_token.expired?
